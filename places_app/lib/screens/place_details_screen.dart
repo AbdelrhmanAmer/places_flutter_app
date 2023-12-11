@@ -19,12 +19,16 @@ class PlaceDetailsScreen extends StatelessWidget {
         ),
       ),),
       body: Center(
-        child: Text(
-          place.title,
-          style: Theme.of(context).textTheme.titleLarge!.copyWith(
-            color: Theme.of(context).colorScheme.onPrimaryContainer
-          )
-        ),
+        child: Stack(
+          children: [
+            Image.file(
+                place.image,
+                fit: BoxFit.cover,
+              height: double.infinity,
+              width: double.infinity,
+            )
+          ],
+        )
       ),
     );
   }
